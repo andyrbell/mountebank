@@ -13,7 +13,7 @@ RUN apk update \
 
 ENV MOUNTEBANK_VERSION=1.5.1-beta.1115
 
-RUN npm config set registry http://registry.npmjs.com \
+RUN npm config set registry https://registry.npmjs.com \
  && npm install -g mountebank@${MOUNTEBANK_VERSION} --production \
  && npm cache clean \
  && rm -rf /tmp/npm*
