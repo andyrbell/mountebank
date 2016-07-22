@@ -6,10 +6,10 @@ EXPOSE 2525
 
 CMD ["mb"]
 
-ENV NODE_VERSION=6.2.0-r0
+ENV NODE_VERSION=4.4.4-r0
 
 RUN apk update \
- && apk add --no-cache nodejs=${NODE_VERSION}
+ && apk add --no-cache nodejs-lts=${NODE_VERSION}
 
 ENV MOUNTEBANK_VERSION=1.6.0-beta.1107
 
