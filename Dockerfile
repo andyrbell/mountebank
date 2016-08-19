@@ -11,7 +11,7 @@ ENV NODE_VERSION=4.4.4-r0
 RUN apk update \
  && apk add --no-cache nodejs-lts=${NODE_VERSION}
 
-ENV MOUNTEBANK_VERSION=1.6.0-beta.1107
+ENV MOUNTEBANK_VERSION=1.6.0
 
 RUN npm install -g mountebank@${MOUNTEBANK_VERSION} --production \
  && npm cache clean \
