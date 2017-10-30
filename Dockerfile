@@ -4,7 +4,7 @@ EXPOSE 2525
 
 CMD ["mb"]
 
-ENV NODE_VERSION=6.9.5-r1
+ENV NODE_VERSION=6.11.5
 
 RUN apk update \
  && apk add --no-cache nodejs=${NODE_VERSION}
