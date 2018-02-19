@@ -1,17 +1,16 @@
-FROM alpine:3.6
+FROM alpine:3.7
 
 EXPOSE 2525
 
 CMD ["mb"]
 
-ENV NODE_VERSION=6.10.3-r1
+ENV NODE_VERSION=8.9.3-r0
 
 RUN apk update \
- && apk add --no-cache nodejs=${NODE_VERSION} \
- && apk add --no-cache nodejs-npm=${NODE_VERSION}
+ && apk add --no-cache nodejs=${NODE_VERSION}
 
-ENV MOUNTEBANK_VERSION=1.13.0
+ENV MOUNTEBANK_VERSION=1.14.0
 
 RUN npm install -g mountebank@${MOUNTEBANK_VERSION} --production \
- && npm cache clean \
+ && npm cache clean --force 2>/dev/null \
  && rm -rf /tmp/npm*
