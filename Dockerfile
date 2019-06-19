@@ -9,7 +9,7 @@ ENV NODE_VERSION=10.14.2-r0
 RUN apk update \
  && apk add --no-cache nodejs=${NODE_VERSION} npm=${NODE_VERSION}
 
-ENV MOUNTEBANK_VERSION=2.0.0
+ENV MOUNTEBANK_VERSION=2.1.0
 
 RUN npm install -g mountebank@${MOUNTEBANK_VERSION} --production \
  && npm cache clean --force 2>/dev/null \
